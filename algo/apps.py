@@ -131,13 +131,5 @@ class Gate:
         except Exception as e:
             raise Error(e)
 
-    def keepalive(self, url):
-        while True:
-            try:
-                rqs.get(url)
-            except Exception as e:
-                p(e)
-            time.sleep(30)
-
 if __name__ == '__main__':
     pass
