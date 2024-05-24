@@ -59,7 +59,7 @@ class Pages:
 class Components:
     def __init__(s):
         s.fer_key = csrf_key+'='
-        s.allowed_origins = app_info['web_app_url'].replace('https://', '')
+        s.allowed_origins = env["url"]
         s.db = 'algo/db.json'
 
     async def safe_tool(s, parent, action):
