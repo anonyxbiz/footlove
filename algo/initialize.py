@@ -12,7 +12,7 @@ p = print
 with open('env.json', 'r') as f:
     env = j.load(f)
     
-csrf_key = env["key"]
+csrf_key = env[0]["key"]
 
 class Error(Exception):
     def __init__(self, e=None, location=None, status=403):
