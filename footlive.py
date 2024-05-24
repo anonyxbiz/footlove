@@ -52,7 +52,7 @@ async def kontrolla(arg):
                 break
             else:
                 wait = randint(1, 5)
-                await sleep(wait)
+                await a.sleep(wait)
                 
         for a, i in enumerate(kontrol):
             if i['job'] == arg['job']['job']:
