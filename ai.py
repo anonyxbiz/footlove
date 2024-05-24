@@ -1,6 +1,6 @@
 # ai.py
 from algo.initialize import*
-from algo.apps import Components
+#from algo.apps import Components
 from googleapiclient.discovery import build
 import google.generativeai as genai
 
