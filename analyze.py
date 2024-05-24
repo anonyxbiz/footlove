@@ -1,28 +1,44 @@
 # analyze.py
 from footlive import p, bs4, get_soup, run, Error, load, run, get_matches as live_matches
-import json_stream as j
-from difflib import get_close_matches
+from algo.initialize import*
 from ai import Wazingai
-from datetime import datetime as dt
 
 ai = Wazingai()
 
+db_busy = False
+
+async def load_balancer():
+    global db_busy
+    if db_busy:
+        while True:
+            a.sleep(2)
+            if not db_busy:
+                db_busy = True
+                return True
+        
 async def get_matches():
+    global db_busy
+    await load_balancer()
+    
     match_summaries = []
     
     with open("all_matches.json", "r") as f:
-        matches = j.load(f)
+        matches = j_s.load(f)
         for i in matches:
             match = i['match']
             match_data = i['match_data']
             
             match_summaries.append({"match": match, "data": match_data})
-            
+    
+    db_busy = False
     return match_summaries
     
 async def get_live_matches():
+    global db_busy
+    await load_balancer()
     latest_scores = await live_matches(wtf=True)
     
+    db_busy = False
     return latest_scores
     
 async def find_match(word, array):

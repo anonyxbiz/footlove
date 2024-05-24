@@ -20,8 +20,11 @@ class Backend_apps:
                 abort(403, "request missing data")
         except Exception as e:
             abort(403, e)
-         
-        # run await update_db() and return data concurrently
+            
+            
+        # Run update_db in the background
+        a.create_task(self.update_db())
+
         return data
         
     async def update_db(self):
