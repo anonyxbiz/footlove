@@ -4,7 +4,7 @@ from algo.initialize import*
 from bs4 import BeautifulSoup as bs4 
 from threading import Thread as T
 from random import randint
-from asyncio import sleep
+from asyncio import sleep, run
 
 kontrol = []
 all_matches = []
