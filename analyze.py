@@ -1,6 +1,6 @@
 # analyze.py
-from footlive import p, bs4, get_soup, run, Error, load, run, get_matches as live_matches
 from algo.initialize import*
+from footlive import bs4, get_soup, load, run, get_matches as live_matches
 from ai import Wazingai
 
 ai = Wazingai()

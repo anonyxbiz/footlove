@@ -41,7 +41,7 @@ class Analytics:
         
 class Wazingai: 
     def __init__(ai, model='gemini-1.5-pro-latest'):
-        ai.api_key = "AIzaSyA2Wuzo0_4IkhY6SMzm0wpPU3N2OyU7Y3Y"
+        ai.api_key = env["api_key"]
         ai.model = model
         genai.configure(api_key=ai.api_key)
         ai.model = genai.GenerativeModel(ai.model)

@@ -1,35 +1,17 @@
 # app: footlive.py - football_livescore app.
 # developer: anonyxbiz
-from requests import get
-from asyncio import run, sleep
+from algo.initialize import*
 from bs4 import BeautifulSoup as bs4 
 from threading import Thread as T
 from random import randint
-from json import load, dump
-from sys import exit
-
-p = print
 
 kontrol = []
 all_matches = []
 
-class Error(Exception):
-    def __init__(self, e=None, location=None, status=None):
-        self.errors = {
-            'status': status,
-            'error': str(e),
-            'location': location
-        }
-        print(self.errors)
-        exit(1)
-    
-    def __str__(self):
-        return str(self.errors)
-       
 async def get_soup(url):
     headers = {}
     try:
-        r = get(url, headers=headers)
+        r = rqs.get(url, headers=headers)
         if r.status_code >= 400:
             Error(r.text, "get_soup")
             
@@ -82,7 +64,7 @@ async def kontrolla(arg):
 async def save_matches(all_matches):
     try:
         with open("all_matches.json", "w", encoding="UTF-8") as f:
-            dump(all_matches, f, indent=4, ensure_ascii=False)
+            j.dump(all_matches, f, indent=4, ensure_ascii=False)
                 
             return 'Dumped {} Matches'.format(len(all_matches))
         
@@ -143,5 +125,5 @@ def sync_to_async(arg):
         raise Error(e, "sync_to_async")
     
 if __name__=="__main__":
-    o = run(get_matches(max_workers=200, wtf=True))
+    o = a.run(get_matches(max_workers=200, wtf=True))
     p(o)
