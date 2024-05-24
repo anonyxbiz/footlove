@@ -22,8 +22,10 @@ class Error(Exception):
             'location': location
         }
         p(self.errors)
-        abort(403, self.errors)
+        exit(1)
+        #abort(403, self.errors)
     
     def __str__(self):
         p(self.errors)
-        abort(403, self.errors)
+        exit(1)
+        #abort(403, self.errors)

@@ -66,7 +66,9 @@ async def save_matches(all_matches):
         with open("all_matches.json", "w", encoding="UTF-8") as f:
             j.dump(all_matches, f, indent=4, ensure_ascii=False)
                 
-            return 'Dumped {} Matches'.format(len(all_matches))
+            msg = 'Dumped {} Matches'.format(len(all_matches))
+            p(msg)
+            return msg
         
     except Exception as e:
         raise Error(e, "save_matches")
@@ -125,5 +127,5 @@ def sync_to_async(arg):
         raise Error(e, "sync_to_async")
     
 if __name__=="__main__":
-    o = a.run(get_matches(max_workers=200, wtf=True))
-    p(o)
+    a.run(get_matches(max_workers=20, wtf=True))
+    
