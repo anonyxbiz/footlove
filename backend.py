@@ -23,7 +23,7 @@ class Backend_apps:
             
             
         # Run update_db in the background
-        a.create_task(self.update_db())
+        #a.create_task(self.update_db())
 
         return data
         
