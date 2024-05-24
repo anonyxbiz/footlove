@@ -123,10 +123,10 @@ async def get_matches(max_workers=100, wtf=False):
 
 def sync_to_async(arg):
     try:
-        a.run(arg['run'](arg))
+        run(arg['run'](arg))
     except Exception as e:
         raise Error(e, "sync_to_async")
     
 if __name__=="__main__":
-    a.run(get_matches(max_workers=20, wtf=True))
+    run(get_matches(max_workers=20, wtf=True))
     
