@@ -1,0 +1,101 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --text-color: #FFFFFF;
+    --icon-color: #ACACBE;
+    --icon-hover-bg: #5b5e71;
+    --placeholder-color: blue;
+    --outgoing-chat-bg: #343541;
+    --incoming-chat-bg: #444654;
+    --outgoing-chat-border: #343541;
+    --incoming-chat-border: #444654;
+    --body-bg: #121212;
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+.genre-box {
+    position: relative;
+    color: var(--text-color);
+    padding: 15px 10px;
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+    /* Ensure image doesn't overflow */
+}
+
+.form-container {
+    margin: auto;
+    display: flex;
+    position: relative;    
+    text-align: center;
+    max-width: 1080px;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #FFFFFF;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+    background-color: #343541;
+}
+
+.content {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    justify-items: center;
+    max-width: 1080px;
+    width: 100%;
+    padding: 15px 10px;
+    border: 2px solid var(--body-bg);
+}
+.content body {
+  padding: 3rem;
+  font-size: 16px;
+  
+}
+.content body:hover {
+    outline: none;
+}
+
+textarea {
+  width: 100%;
+  min-height: 30rem;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  outline: none;
+  border: 2px solid var(--placeholder-color);
+}
+
+textarea:hover {
+    outline: none;
+}
+
+#submit_chat {
+  background-color: var(--body-bg);
+  color: darkcyan;
+  outline: none;    
+}
+
+#submit_chat:hover {
+  outline: none;
+}
