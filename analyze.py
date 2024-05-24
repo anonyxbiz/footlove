@@ -84,9 +84,8 @@ def analyze(game, live=True):
     return analysis
     
 if __name__=="__main__":
-     #run(get_live_matches())
-     while True:
-         match = input("Enter Match: ")
-         summary = analyze(match)
-         p(summary)
-         p('\n')
+    while True:
+        match = input("Enter Match: ")
+        summary = analyze(match)
+        p(summary)
+        p('\n')
