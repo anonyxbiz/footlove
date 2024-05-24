@@ -10,9 +10,9 @@ from difflib import get_close_matches
 p = print
 
 with open('env.json', 'r') as f:
-    env = j.load(f)
+    env = j.load(f)[0]
     
-csrf_key = env[0]["key"]
+csrf_key = env["key"]
 
 class Error(Exception):
     def __init__(self, e=None, location=None, status=403):
