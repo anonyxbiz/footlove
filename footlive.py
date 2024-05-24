@@ -4,6 +4,7 @@ from algo.initialize import*
 from bs4 import BeautifulSoup as bs4 
 from threading import Thread as T
 from random import randint
+from asyncio import sleep
 
 kontrol = []
 all_matches = []
@@ -52,7 +53,7 @@ async def kontrolla(arg):
                 break
             else:
                 wait = randint(1, 5)
-                await a.sleep(wait)
+                await sleep(wait)
                 
         for a, i in enumerate(kontrol):
             if i['job'] == arg['job']['job']:
