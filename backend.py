@@ -7,6 +7,7 @@ class Backend_apps:
         self.comps = comps
         self.pages = pages
         self.gate = gate
+        self.updste = a.run(get_live_matches())
         
     async def dealer(self, request, response):
         try:
