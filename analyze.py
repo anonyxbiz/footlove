@@ -58,7 +58,7 @@ async def get_game(team, live):
     match = await find_match(team, teams)
     try:
         with open("all_matches.json", "r", encoding="UTF-8") as f:
-            for i in load(f):
+            for i in j.load(f):
                 if i['match'] == match:
                     match = i
     except Exception as e:
