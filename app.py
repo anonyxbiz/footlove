@@ -42,6 +42,9 @@ def models():
         abort(403, e)
        
 if __name__=="__main__":
+    task = Thread(target=gate.keepalive, args=(url="https://footlove.onrender.com"))
+    task.start()
+    
     run(app=app, host="0.0.0.0", port="8004", debug=True, reloader=True)
     
     
