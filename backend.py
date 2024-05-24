@@ -28,8 +28,10 @@ class Backend_apps:
 
         return data
         
-    async def update_db(self):
-        await get_live_matches()
+    def update_db(self):
+        while True:
+            a.run(get_live_matches())
+            time.sleep(30)
         
         
 if __name__ == '__main__':
