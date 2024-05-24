@@ -136,7 +136,7 @@ class Gate:
                 rqs.get(url)
             except Exception as e:
                 p(e)
-            await time.sleep(30)
+            time.sleep(30)
 
 if __name__ == '__main__':
     pass
