@@ -1,5 +1,6 @@
 # apps.py
 from algo.initialize import*
+from cryptography.fernet import Fernet
 
 class Pages:
     def __init__(s, comps):
